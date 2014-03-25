@@ -33,7 +33,6 @@ namespace TestCodeFirstinWin.Migrations
         public override void Down()
         {
             DropTable("dbo.People");
-
             DropTable("dbo.Men");
         }
     }
