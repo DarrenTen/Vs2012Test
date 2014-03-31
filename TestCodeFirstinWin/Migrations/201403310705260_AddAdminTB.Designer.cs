@@ -7,13 +7,13 @@ namespace TestCodeFirstinWin.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class addDesc : IMigrationMetadata
+    public sealed partial class AddAdminTB : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addDesc));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddAdminTB));
         
         string IMigrationMetadata.Id
         {
-            get { return "201403241006147_addDesc"; }
+            get { return "201403310705260_AddAdminTB"; }
         }
         
         string IMigrationMetadata.Source

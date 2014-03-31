@@ -5,6 +5,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormProEF", "WinFormProE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCodeFirstinWin", "TestCodeFirstinWin\TestCodeFirstinWin.csproj", "{8DAF57BF-0059-45D3-9BB3-59CBC599057C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rewards2_ModelFirst", "Rewards2\Rewards2_ModelFirst.csproj", "{DEE5E906-364D-4D26-8D39-A37091494EFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBFirstTest1", "DBFirstTest1\DBFirstTest1.csproj", "{C4202AA1-BA66-438A-928D-F70776EC9900}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +23,14 @@ Global
 		{8DAF57BF-0059-45D3-9BB3-59CBC599057C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DAF57BF-0059-45D3-9BB3-59CBC599057C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DAF57BF-0059-45D3-9BB3-59CBC599057C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEE5E906-364D-4D26-8D39-A37091494EFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEE5E906-364D-4D26-8D39-A37091494EFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEE5E906-364D-4D26-8D39-A37091494EFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEE5E906-364D-4D26-8D39-A37091494EFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4202AA1-BA66-438A-928D-F70776EC9900}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4202AA1-BA66-438A-928D-F70776EC9900}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4202AA1-BA66-438A-928D-F70776EC9900}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4202AA1-BA66-438A-928D-F70776EC9900}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

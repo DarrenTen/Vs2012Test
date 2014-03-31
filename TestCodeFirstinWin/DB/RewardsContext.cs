@@ -17,6 +17,7 @@ namespace TestCodeFirstinWin.DB
         // Create a database set for each of the data items.
         public DbSet<Purchase> Purchases { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Admins> AdminsTB { get; set; }
 
     }
 }

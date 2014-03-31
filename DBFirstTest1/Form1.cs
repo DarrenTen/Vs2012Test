@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TestCodeFirstinWin.DB;
-using TestCodeFirstinWin.Model;
 
-namespace TestCodeFirstinWin
+namespace DBFirstTest1
 {
     public partial class Form1 : Form
     {
@@ -28,34 +25,15 @@ namespace TestCodeFirstinWin
             NewPurchase.PurchaseDate = DateTime.Now;
             // Create a new customer and add the purchase.
             Customer NewCustomer = new Customer();
-            NewCustomer.CustomerName = "Josh Bailey";
+            NewCustomer.CustomerName = "Carole Poland";
             // Create the context.
-
-            Admins ad = new Admins();
-            ad.AdminID = new Guid();
-            ad.Birthday = new DateTime(1990,9,12);
-            ad.dept = 3;
-            ad.Name = "IAmAdmin";
-            RewardsContext context = new RewardsContext();
+            Rewards2Entities context = new Rewards2Entities();
             // Add the record and save it.
             context.Customers.Add(NewCustomer);
             context.Purchases.Add(NewPurchase);
-            context.AdminsTB.Add(ad);
             context.SaveChanges();
             // Display a success message.
             MessageBox.Show("Record Added");
-        }
-
-        private void btnTest_Click(object sender, EventArgs e)
-        {
-            RewardsContext rc = new RewardsContext();
-             var pcs = rc.Purchases.Select(p=>p);
-             MessageBox.Show(pcs.Count()+"");
-        }
-
-        private void btnAddTestDB_Click(object sender, EventArgs e)
-        {
-           
         }
     }
 }
