@@ -27,20 +27,16 @@ namespace TestCodeFirstinWin
             NewPurchase.Amount = new Decimal(5.99);
             NewPurchase.PurchaseDate = DateTime.Now;
             // Create a new customer and add the purchase.
-            Customer NewCustomer = new Customer();
-            NewCustomer.CustomerName = "Josh Bailey";
+            Customer NewCustomer= new Customer {CustomerName = "Josh Bailey"};
             // Create the context.
 
-            Admins ad = new Admins();
+            var ad = new Admins {Name = "IAmAdmin", dept = 3, Birthday = new DateTime(1990, 9, 12)};
             ad.AdminID = new Guid();
-            ad.Birthday = new DateTime(1990,9,12);
-            ad.dept = 3;
-            ad.Name = "IAmAdmin";
-            RewardsContext context = new RewardsContext();
+            var context = new RewardsContext();
             // Add the record and save it.
             context.Customers.Add(NewCustomer);
             context.Purchases.Add(NewPurchase);
-            context.AdminsTB.Add(ad);
+            if (context.AdminsTB != null) context.AdminsTB.Add(ad);
             context.SaveChanges();
             // Display a success message.
             MessageBox.Show("Record Added");
