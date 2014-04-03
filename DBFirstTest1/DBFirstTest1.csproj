@@ -68,6 +68,11 @@
     <Compile Include="Purchase.cs">
       <DependentUpon>RewardsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Rewards2DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rewards2DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RewardsModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -96,6 +101,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Customer.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -109,6 +115,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>RewardsModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Rewards2DataSet.xsc">
+      <DependentUpon>Rewards2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Rewards2DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Rewards2DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Rewards2DataSet.xss">
+      <DependentUpon>Rewards2DataSet.xsd</DependentUpon>
+    </None>
     <None Include="RewardsModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>RewardsModel.edmx</DependentUpon>
