@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.EntityClient;
 using System.Data.Objects;
+using System.Data.Objects.DataClasses;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -23,14 +24,15 @@ namespace DBFirstTest1
             // Split the string into individual words. 
             string[] words = sentence.Split(' ');
 
-            string res = words.Aggregate((a,b)=>b+","+a);
+            string res = words.Aggregate((a, b) => b + "," + a);
             int count = 0;
-            string res1 = words.Aggregate((a, b) => {
+            string res1 = words.Aggregate((a, b) =>
+            {
                 count++;
-                Console.WriteLine(a+"-"+b+"("+count+")");
-                return b + "," + a; 
+                Console.WriteLine(a + "-" + b + "(" + count + ")");
+                return b + "," + a;
             });
-            MessageBox.Show(res);
+            //MessageBox.Show(res);
         }
         public Form1()
         {
@@ -110,6 +112,34 @@ namespace DBFirstTest1
             // TODO: This line of code loads data into the 'rewards2DataSet.Customers' table. You can move, or remove it, as needed.
             this.customersTableAdapter.Fill(this.rewards2DataSet.Customers);
 
+        }
+
+        [EdmFunction("RewardsModel.Store", "AvgPurchase")]
+        public static decimal? AveragePurchase(Int32 CustomerId)
+        {
+            throw new NotSupportedException("不支持直接调用.");
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Rewards2Entities r2 = new Rewards2Entities();
+
+            var customerList = r2.Customers.Select(p => new { Name = p.CustomerName, Avg = AveragePurchase(p.CustomerId) });
+            //var customerList = from cust in r2.Customers
+            //        select new
+            //        {
+            //            Name = cust.CustomerName,
+            //            Avg = AveragePurchase(cust.CustomerId)
+            //        };
+                                // Create a string to hold the result.
+            StringBuilder Output = new StringBuilder();
+            // Parse the result.
+            foreach (var CustEntry in customerList)
+                Output.Append(
+                CustEntry.Name + " makes an average purchase of "
+                + CustEntry.Avg + ".\r\n");
+            // Display the result on screen.
+            MessageBox.Show(Output.ToString());
         }
     }
 }
